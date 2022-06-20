@@ -48,37 +48,44 @@ header {
 }
 
 .container #one {
-  border-right: none;
-  border-bottom: none;
+  border-top: none;
+  border-left: none;
+
 }
 
 .container #two {
   border-top: none;
-  border-left: none;
 }
 
 .container #three {
   border-top: none;
+  border-right: none;
 }
 
 .container #four {
-  border-top: none;
-  border-right: none;
+  border-left: none;
 }
 
-.container #five {
-  border-left: none;
+.container #six {
+  border-right: none;
 }
 
 .container #seven {
-  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  
 }
 
 .container #eight {
-  border-left: none;
   border-bottom: none;
 }
 
 .container #nine {
+  border-right: none;
   border-bottom: none;
+  
+}
+
+.humans {
+opacity: 1;
 }
