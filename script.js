@@ -1,4 +1,6 @@
 const container= document.querySelector(".container")
+const grid= document.querySelector(".grid")
+container.append(grid)
 
 
 // const makeSquare = () => {

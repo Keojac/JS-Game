@@ -17,7 +17,7 @@ body {
   margin: 100px auto;
   display: flex;
   justify-content: center;
-  background-color: beige;
+  flex-wrap: wrap;
 }
 
 h1 {
@@ -40,4 +40,45 @@ h1 {
 
 header {
   text-align: center;
+}
+
+.grid {
+  width: 30%;
+  border: 3px solid white;
+}
+
+.container #one {
+  border-right: none;
+  border-bottom: none;
+}
+
+.container #two {
+  border-top: none;
+  border-left: none;
+}
+
+.container #three {
+  border-top: none;
+}
+
+.container #four {
+  border-top: none;
+  border-right: none;
+}
+
+.container #five {
+  border-left: none;
+}
+
+.container #seven {
+  border-right: none;
+}
+
+.container #eight {
+  border-left: none;
+  border-bottom: none;
+}
+
+.container #nine {
+  border-bottom: none;
 }
