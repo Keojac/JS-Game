@@ -3,10 +3,41 @@ html, body {
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
   color: #444;
-  background: #fefefe;
+  background-image: url("https://img.freepik.com/free-vector/falling-stars-beautiful-night-background_23-2148273840.jpg?t=st=1655447442~exp=1655448042~hmac=319107e720959e17657ef2e8abc26bc29e806946d5c75309daa9f22e77b033b9&w=996");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+.container {
+  width: 60%;
+  height: 60%;
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+  background-color: beige;
+}
+
+h1 {
+  color: #ecb645;
+  font-size: 58px;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* .square {
+  width: 30%;
+  background-color: black;
+  border: 3px solid #333;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+} */
+
+header {
+  text-align: center;
 }
