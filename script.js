@@ -2,23 +2,19 @@ const container= document.querySelector(".container")
 const singleGrids= document.querySelectorAll(".grid")
 
 
-
+let emptyDivs= []
+let picDivs= []
 const compMove= () => {
-
-    for (let i=0; i < singleGrids.length; i++){
-        singleGrids[i].addEventListener("click", (e)=> {
-let randomSquare= Math.floor(Math.random() * 9)
-let chooseSquare= singleGrids[randomSquare]
+    
+let randomSquare= Math.floor(Math.random() * emptyDivs.length)
+let chooseSquare= emptyDivs[randomSquare]
 const alienImg= document.createElement("img");
     alienImg.classList.add("aliens");
     alienImg.src="alien token.png";
-    chooseSquare.appendChild(alienImg)
-        })
-    }
+    chooseSquare.appendChild(alienImg);
+    picDivs.push(chooseSquare)
+    checkEmptyDiv();
 }
-
-compMove();
-
 
 
 const humMove= () => {
@@ -29,6 +25,9 @@ const humMove= () => {
         humanImg.classList.add("humans");
         humanImg.src="human token.png";
         e.target.appendChild(humanImg);
+        emptyDivs.push(e.target)
+        checkEmptyDiv();
+        compMove();
         }) 
      } 
     }
@@ -36,24 +35,34 @@ const humMove= () => {
     
 
 
+const moveOptions= () => {
+    for (let i=0; i < singleGrids.length; i++){
+        singleGrids[i].addEventListener("click", (e)=> {
+       picDivs.push(singleGrids[i]);
+       console.log(picDivs);
+    }
+ )}
+}
+    moveOptions();
+
+const checkEmptyDiv = () => {
+    emptyDivs= [];
+    for (let i=0; i < singleGrids.length; i++){
+        if (singleGrids[i].childNodes.length === 0){
+            emptyDivs.push(singleGrids[i])
+            
+        }
+} console.log(emptyDivs);
+}
 
 
 
-// const compAction= () => {
-//    if (humMove() === true){
-//     compMove()
-//    }
-// }
-
-// compAction();
+// console.log(picDivs);
 
 
 
 
-
-
-
-
+// This is for a 9x9 grid if I have time
 
 // const makeSquare = () => {
 //     const div= document.createElement("div")
