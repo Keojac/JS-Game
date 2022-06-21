@@ -1,11 +1,15 @@
 const container= document.querySelector(".container")
 const singleGrids= document.querySelectorAll(".grid")
-
+const gameOver= false
 
 let emptyDivs= []
 let picDivs= []
+
+
 const compMove= () => {
-    
+    if (picDivs.length === 9){
+        return gameOver === true
+    } else { 
 let randomSquare= Math.floor(Math.random() * emptyDivs.length)
 let chooseSquare= emptyDivs[randomSquare]
 const alienImg= document.createElement("img");
@@ -14,6 +18,7 @@ const alienImg= document.createElement("img");
     chooseSquare.appendChild(alienImg);
     picDivs.push(chooseSquare)
     checkEmptyDiv();
+    }
 }
 
 
@@ -21,6 +26,9 @@ const humMove= () => {
 
     for (let i=0; i < singleGrids.length; i++){
     singleGrids[i].addEventListener("click", (e)=> {
+        if (picDivs.length === 9){
+            return gameOver === true
+        } else {   
         const humanImg= document.createElement("img");
         humanImg.classList.add("humans");
         humanImg.src="human-token.png";
@@ -29,6 +37,7 @@ const humMove= () => {
         checkEmptyDiv();
         compMove();
         checkWin();
+        }
         }) 
      } 
     }
@@ -72,15 +81,23 @@ const checkWin= () => {
         const c= winConditions[i][2].childNodes[0].getAttribute("src")
         if (a === b && b === c){
             if (a === "human-token.png"){
-                console.log("Humans win!"); 
+                console.log("Humans win!");
+                return gameOver === true 
              } else if (a === "alien-token.png"){
                 console.log("Aliens win!");
-           } else {
-            console.log("It's a draw! Nobody wins");
-           } }
+                return gameOver === true
+           }
         }
+        }
+    } 
     }
-        }
+
+const checkDraw= () => {
+    if (picDivs.length === 9){
+        console.log("It's a draw!");
+        return gameOver === true;
+    }
+}      
     
 
 
