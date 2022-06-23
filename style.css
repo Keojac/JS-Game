@@ -17,6 +17,7 @@ body {
   margin: 100px auto;
   display: flex;
   justify-content: center;
+  text-align: center;
   flex-wrap: wrap;
 }
 
@@ -85,4 +86,148 @@ height: 100%;
 .aliens {
   width: 100%;
   height: 100%;
+}
+
+.hwinscreen {
+  display: none;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  border: 5px solid navy;
+  background-color: #3e497a;
+  text-align: center;
+  color: #ecb645;
+}
+
+.show {
+  display: block;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  border: 5px solid navy;
+  background-color: #3e497a;
+  text-align: center;
+  color: #ecb645;
+}
+
+.hwinscreen img {
+  width: 90%;
+  height: 60%;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.hwinscreen button {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.awinscreen {
+  display: none;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  border: 5px solid navy;
+  background-color: #3e497a;
+  text-align: center;
+  color: #ecb645;
+}
+
+.ashow {
+  display: block;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  border: 5px solid navy;
+  background-color: #3e497a;
+  text-align: center;
+  color: #ecb645;
+}
+
+.awinscreen img {
+  width: 90%;
+  height: 60%;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.awinscreen button {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.dscreen {
+  display: none;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  border: 5px solid navy;
+  background-color: #3e497a;
+  text-align: center;
+  color: #ecb645;
+}
+
+.dshow {
+  display: block;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  border: 5px solid navy;
+  background-color: #3e497a;
+  text-align: center;
+  color: #ecb645;
+}
+
+.dscreen img {
+  width: 90%;
+  height: 60%;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.dscreen button {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#hscore {
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  top: 2%;
+  left: 2%;
+  text-align: center;
+  color: orange;
+}
+
+h3 {
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+#ascore {
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  top: 2%;
+  right: 2%;
+  text-align: center;
+  color: orange;
 }
