@@ -1,3 +1,6 @@
+// =================================================================================
+// Global Variables
+// =================================================================================
 const container = document.querySelector(".container")
 const singleGrids = document.querySelectorAll(".grid")
 const gameOver = false;
@@ -5,6 +8,16 @@ const hWinScreen = document.getElementById("hwin")
 const aWinScreen = document.getElementById("awin")
 const dScreen = document.getElementById("draw")
 const hScore = document.getElementById("hscore")
+
+// =================================================================================
+// Audio Files
+// =================================================================================
+
+const cheers = new Audio('cheers.wav');
+const sad = new Audio('sad.wav')
+const fighting = new Audio('fighting.wav');
+const themesong = new Audio('theme.mp3')
+
 
 let hCount = document.getElementById("hpoints")
 let aCount = document.getElementById("apoints")
@@ -14,6 +27,10 @@ let isWinner = false;
 
 let emptyDivs = [];
 let picDivs = [];
+
+// =================================================================================
+// AI coding- Random Square choosing
+// =================================================================================
 
 
 const compMove = () => {
@@ -36,6 +53,9 @@ const compMove = () => {
     console.log(picDivs.length);
 }
 
+// =================================================================================
+// Human Player Clicks
+// =================================================================================
 
 const humMove = () => {
 
@@ -58,6 +78,7 @@ const humMove = () => {
             checkWin();
             checkDraw();
             compMove();
+            themesong.play();
         } else {
             return
         }
@@ -67,6 +88,9 @@ const humMove = () => {
 
 humMove();
 
+// =================================================================================
+// Checking which squares don't have pictures
+// =================================================================================
 
 const checkEmptyDiv = () => {
     emptyDivs = [];
@@ -77,6 +101,9 @@ const checkEmptyDiv = () => {
     } 
 }
 
+// =================================================================================
+// Checking which squares do have pictures
+// =================================================================================
 
 const checkPicDiv = () => {
     picDivs = [];
@@ -88,6 +115,9 @@ const checkPicDiv = () => {
     } console.log(picDivs);
 }
 
+// =================================================================================
+// Winning Conditions and Function to check for win
+// =================================================================================
 
 const winConditions = [
 [singleGrids[0], singleGrids[1], singleGrids[2]], 
@@ -112,12 +142,14 @@ const checkWin= () => {
                 hWinScreen.classList.add("show");
                 hgameScore += 1
                 hCount.textContent = hgameScore;
+                cheers.play();
                 isWinner = true;
         } else if (a === b && b === c && a === "alien-token.png"){
                 console.log("Aliens win!");
                 aWinScreen.classList.add("ashow");
                 agameScore += 1;
                 aCount.textContent= agameScore;
+                sad.play();
                 isWinner = true;
             }
            }
@@ -125,7 +157,9 @@ const checkWin= () => {
         return false
     }
     
-
+// =================================================================================
+// Draw condition functions
+// =================================================================================
 
 const checkDraw = () => {
     if (isWinner === true) {
@@ -135,10 +169,14 @@ const checkDraw = () => {
     } else if (picDivs.length === 9 && isWinner === false) {
         console.log("It's a draw!");
         dScreen.classList.add("dshow");
+        fighting.play(); 
         return
     }
 }      
-    
+
+// =================================================================================
+// Restarts game by removing pictures from squares
+// =================================================================================
 
 const restartGame = () => {
     hWinScreen.classList.remove("show")
@@ -152,6 +190,9 @@ const restartGame = () => {
     isWinner = false;
 }
 
+// =================================================================================
+// Event listeners for the restart buttons
+// =================================================================================
 
 document.getElementById("hrestartbutton").addEventListener("click", restartGame)
 document.getElementById("arestartbutton").addEventListener("click", restartGame)

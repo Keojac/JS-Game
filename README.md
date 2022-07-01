@@ -48,13 +48,14 @@ In the making of the game I encountered a number of bugs and errors. One of the 
 
 ### Installation
 
-To play this game, download this repository and open the index.html file in a web browser.
+To play this game, download this repository and open the index.html file in a web browser or click this link https://keojac.github.io/Tic-Tac-Toe/
 
 ---
 
 ### References
 
 Background, end game screens and human and alien tokens were pictures taken from [Free Pik](www.freepik.com)
+Sounds used within this game were downloaded from [Mixkit](mixkit.co)
 
 - Background Image: https://www.freepik.com/free-vector/falling-stars-beautiful-night-background_5376553.htm#query=space%20background&position=20&from_view=search
 - Draw Screen Image: https://www.freepik.com/free-photo/soldier-guarding-design_879705.htm#query=soldiers&position=19&from_view=search 
